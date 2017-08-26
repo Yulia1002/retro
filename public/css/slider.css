@@ -1,0 +1,115 @@
+@keyframes slide-right {
+  0% {
+    right: -250px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+@keyframes slide-left {
+  0% {
+    left: -250px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes slide-right-left {
+  0% {
+    right: 0px;
+  }
+  100% {
+    right: 250px;
+  }
+}
+
+.sliderblock {
+  max-width: 100%;
+  margin: 0px auto;
+  border: 0.9em solid #fbfaf6;
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  background: #fbfaf6;
+}
+.sliderblock .slider{
+  margin-bottom: 5px;
+}
+.slider {
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  height: 545px;
+  max-width: 100%;
+}
+
+.slider::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.slider a{
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  outline: 0;
+  width: 1.173em;
+  height: 2.8em;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+
+.slider .prevarrow{
+background: url('../assets/img/slider/controls.prev.png') no-repeat;
+background-size: 100% 100%;
+}
+
+.slider .nextarrow{
+  right: 0;
+  background: url('../assets/img/slider/controls.next.png') no-repeat;
+  background-size: 100% 100%;
+}
+
+.sliderblock h1 {
+  text-align: center;
+  padding: 0.0em 0 0.4em;
+  color: #383a3c;
+  font-size: 1.2em;
+}
+.slider .slider-wrapper .slide {
+  position: absolute;
+  right: -200px;
+  background-color: #ccc;
+  height: 545px;
+  max-width: 100%;
+  float: left;
+  display: flex;
+  transition: all 0.5s ease;
+  visibility: hidden;
+  opacity: 0;
+  animation: slide-right-left 1s ease forwards;
+}
+.slider .slider-wrapper .slide.active {
+  visibility: visible;
+  opacity: 1;
+  animation: slide-right 1s ease forwards;
+  max-width: 100%;
+}
+.slider .slider-wrapper .slide.activePrev {
+  visibility: visible;
+  opacity: 1;
+  animation: slide-left 1s ease forwards;
+  max-width: 100%;
+}
+
+.slider-wrapper .slide img, .slider-wrapper .active img  {
+  max-width: 100%;
+}
+
